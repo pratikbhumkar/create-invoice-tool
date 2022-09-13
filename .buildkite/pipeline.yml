@@ -1,6 +1,7 @@
 steps:
   - name: ":lint-roller: Checking for lints"
-    command: "npm run lint"
+    command: "npm install -g eslint && npm run lint"
+  - wait
   - name: ":classical_building: Building docker image"
     command: "docker build . -t pratikbhumkar/create-invoice-tool"
   - wait
