@@ -1,0 +1,11 @@
+steps:
+  - name: ":lint-roller: Checking for lints"
+    command: "npm run lint"
+  - name: ":classical_building: Building docker image"
+    command: "docker build . -t pratikbhumkar/create-invoice-tool"
+  - wait
+  - name: ":shipit: Shipping docker image"
+    command: "docker push pratikbhumkar/create-invoice-tool"
+  - wait
+  - name: ":surfer: Running image"
+    command: "docker run -p 3000:3000 -d pratikbhumkar/create-invoice-tool"
