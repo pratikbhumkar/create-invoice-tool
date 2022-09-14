@@ -9,4 +9,4 @@ steps:
     command: "docker push pratikbhumkar/create-invoice-tool"
   - wait
   - name: ":surfer: Running image"
-    command: "docker run -p 3000:3000 -d pratikbhumkar/create-invoice-tool"
+    command: "docker run -p 4000:4000 -d pratikbhumkar/create-invoice-tool"

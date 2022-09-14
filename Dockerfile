@@ -14,7 +14,6 @@ RUN npm install
 
 # Bundle app source
 COPY . .
-RUN npm run lint
 
-EXPOSE 3000
+EXPOSE 4000
 CMD [ "npm", "start" ]
