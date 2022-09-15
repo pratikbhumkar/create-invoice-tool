@@ -1,5 +1,5 @@
 steps:
-   - name: ":classical_building: Building docker image"
+  - name: ":classical_building: Building docker image"
     command: "docker build -f Dockerfile.dev . -t pratikbhumkar/create-invoice-tool-dev"
   - wait
   - name: ":lint-roller: Checking for lints"
