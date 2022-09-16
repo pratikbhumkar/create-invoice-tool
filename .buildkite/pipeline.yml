@@ -13,7 +13,7 @@ steps:
   - wait
   - block: ":rocket: Run local build!"
   - name: ":classical_building: Building local image"
-    command: "docker build . -t pratikbhumkar/create-invoice-tool"
+    command: "docker build -f Dockerfile . -t pratikbhumkar/create-invoice-tool"
   - wait
   - name: ":surfer: Running local image"
     command: "docker run -p 4000:4000 -d pratikbhumkar/create-invoice-tool"
@@ -32,3 +32,7 @@ steps:
   - wait
   - name: ":surfer: release app from heroku"
     command: "heroku container:release web -a thawing-bayou-98812"
+
+docker run -p 4000:4000 pratikbhumkar/create-invoice-tool
+
+docker run -p 4000:4000 pratikbhumkar/create-invoice-tool-dev
