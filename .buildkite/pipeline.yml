@@ -7,10 +7,6 @@ steps:
   - wait
   - name: ":lint-roller: Testing code"
     command: "docker run docker.io/pratikbhumkar/create-invoice-tool-dev npm test"
-  - wait
-  - name: ":shipit: Shipping docker image to docker registry"
-    command: "docker push pratikbhumkar/create-invoice-tool-dev"
-  - wait
   - block: ":rocket: Run local build!"
   - name: ":classical_building: Building local image"
     command: "docker build -f Dockerfile . -t pratikbhumkar/create-invoice-tool"
