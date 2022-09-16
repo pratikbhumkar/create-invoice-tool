@@ -22,7 +22,7 @@ steps:
     command: "docker build -t registry.heroku.com/thawing-bayou-98812/web ."
   - wait
   - name: ":surfer: pushing image to heroku"
-    command: "docker push registry.heroku.com/create-invoice-tool/web"
+    command: "docker push registry.heroku.com/thawing-bayou-98812/web"
   - wait
   - name: "Set Heroku config/environment variables"
     commands: 
