@@ -19,7 +19,7 @@ steps:
     command: "docker run -p 4000:4000 -d pratikbhumkar/create-invoice-tool"
   - block: ":rocket: Release to production!"
   - name: ":classical_building: Building image for heroku"
-    command: "docker build -t registry.heroku.com/thawing-bayou-98812/web . --env-file ./env"
+    command: "docker build -t registry.heroku.com/thawing-bayou-98812/web ."
   - wait
   - name: ":lint-roller: Checking for lints"
     command: "docker run registry.heroku.com/thawing-bayou-98812/web npm run lint"
