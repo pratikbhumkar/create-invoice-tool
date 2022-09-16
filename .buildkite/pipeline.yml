@@ -32,7 +32,3 @@ steps:
   - wait
   - name: ":surfer: release app from heroku"
     command: "heroku container:release web -a thawing-bayou-98812"
-
-docker run -p 4000:4000 pratikbhumkar/create-invoice-tool
-
-docker run -p 4000:4000 pratikbhumkar/create-invoice-tool-dev
