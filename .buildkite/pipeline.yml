@@ -7,13 +7,9 @@ steps:
   - wait
   - name: ":lint-roller: Testing code"
     command: "docker run docker.io/pratikbhumkar/create-invoice-tool-dev npm test"
-  - wait
-  - name: ":shipit: Shipping docker image to docker registry"
-    command: "docker push pratikbhumkar/create-invoice-tool-dev"
-  - wait
   - block: ":rocket: Run local build!"
   - name: ":classical_building: Building local image"
-    command: "docker build . -t pratikbhumkar/create-invoice-tool"
+    command: "docker build -f Dockerfile . -t pratikbhumkar/create-invoice-tool"
   - wait
   - name: ":surfer: Running local image"
     command: "docker run -p 4000:4000 -d pratikbhumkar/create-invoice-tool"
@@ -21,11 +17,14 @@ steps:
   - name: ":classical_building: Building image for heroku"
     command: "docker build -t registry.heroku.com/thawing-bayou-98812/web ."
   - wait
-  - name: ":lint-roller: Checking for lints"
-    command: "docker run registry.heroku.com/thawing-bayou-98812/web npm run lint"
-  - wait
   - name: ":surfer: pushing image to heroku"
-    command: "docker push registry.heroku.com/create-invoice-tool/web"
+    command: "docker push registry.heroku.com/thawing-bayou-98812/web"
+  - wait
+  - name: "Set Heroku config/environment variables"
+    commands: 
+    - "heroku config:set ISSUER_BASE_URL={{$ISSUER_BASE_URL}} -a thawing-bayou-98812"
+    # - "heroku config:set PORT={{$PORT}} -a thawing-bayou-98812"
+    - "heroku config:set API_IDENTIFIER={{$API_IDENTIFIER}} -a thawing-bayou-98812"
   - wait
   - name: ":surfer: release app from heroku"
     command: "heroku container:release web -a thawing-bayou-98812"
