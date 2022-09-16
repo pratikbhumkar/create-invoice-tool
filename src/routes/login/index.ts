@@ -1,9 +1,8 @@
 import router, { Router } from 'express'
-import { requiresAuth } from 'express-openid-connect'
-
+import { checkJwt } from '../../utils/jwtTokenChecker'
 const loginRouter: Router = router.Router()
 
-loginRouter.get('/', requiresAuth(), function (req, res, next) {
+loginRouter.get('/', checkJwt, function (req, res, next) {
   res.send('Welcome')
 })
 
