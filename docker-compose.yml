@@ -1,0 +1,31 @@
+version: '3.8'
+services:
+  dev:
+    env_file: .env
+    build: 
+      dockerfile: Dockerfile.dev
+      context: .
+    environment:
+      - ISSUER_BASE_URL=${ISSUER_BASE_URL}
+      - PORT=${PORT}
+      - API_IDENTIFIER=${API_IDENTIFIER}
+    volumes:
+      - .:/src
+    image: pratikbhumkar/create-invoice-tool-dev-test
+    ports:
+      - 4000:4000
+    labels:
+      name: Dev build for create-invoice-tool
+  prod:
+    build: 
+      dockerfile: Dockerfile
+      context: .
+    environment:
+      - ISSUER_BASE_URL={{ISSUER_BASE_URL}}
+      - PORT={{PORT}}
+      - API_IDENTIFIER={{API_IDENTIFIER}}
+    volumes:
+      - .:/src
+    image: registry.heroku.com/thawing-bayou-98812/web
+    labels:
+      name: Prod build for create-invoice-tool
