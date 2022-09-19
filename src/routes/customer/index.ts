@@ -1,28 +1,33 @@
 import router, { Router, Request, Response } from 'express'
 import { checkJwt } from '../../utils/jwtTokenChecker'
 import { CustomerInterface } from '../../DataInterface/customerInterface'
-import { addCustomer, disableCustomer, enableCustomer, getCustomer, updateCustomer } from '../../controllers/customerControllers/customerController'
+import { addCustomer, disableCustomer, enableCustomer, getCustomer, updateCustomer } from '../../controllers/customerControllers'
 
 const customerRouter: Router = router.Router()
 
-customerRouter.put('/addCustomer', checkJwt, function (req: Request<{}, {}, CustomerInterface>, res: Response, next) {
-  return addCustomer(req.body)
+customerRouter.put('/addCustomer', checkJwt, async function (req: Request<{}, {}, CustomerInterface>, res: Response, next) {
+  const response = await addCustomer(req.body)
+  res.send(response)
 })
 
 customerRouter.get('/getCustomer', checkJwt, async function (req: Request<{}, {}, String>, res: Response, next) {
-  return await getCustomer(req.body)
+  const customer = await getCustomer(req.query.customerPhoneNumber as string)
+  res.send(customer)
 })
 
-customerRouter.post('/disableCustomer', checkJwt, async function (req: Request<{}, {}, String>, res: Response, next) {
-  return disableCustomer(req.body)
+customerRouter.get('/disableCustomer', checkJwt, async function (req: Request<{}, {}, String>, res: Response, next) {
+  const response = await disableCustomer(req.query.customerPhoneNumber as string)
+  res.send(response)
 })
 
-customerRouter.post('/enableCustomer', checkJwt, function (req: Request<{}, {}, String>, res: Response, next) {
-  return enableCustomer(req.body)
+customerRouter.get('/enableCustomer', checkJwt, async function (req: Request<{}, {}, String>, res: Response, next) {
+  const response = await enableCustomer(req.query.customerPhoneNumber as string)
+  res.send(response)
 })
 
-customerRouter.post('/updateCustomer', checkJwt, function (req: Request<{}, {}, CustomerInterface>, res: Response, next) {
-  return updateCustomer(req.body)
+customerRouter.post('/updateCustomer', checkJwt, async function (req: Request<{}, {}, CustomerInterface>, res: Response, next) {
+  const response = await updateCustomer(req.body)
+  res.send(response)
 })
 
 export default customerRouter
