@@ -1,4 +1,4 @@
-import { CustomerInterface } from '../../DataInterface/customerInterface'
+import { CustomerInterface } from '../../dataInterface/customerInterface'
 import { addCustomerHandler } from './addCustomerHandler'
 import { disableCustomerHandler } from './disableCustomerHandler'
 import { enableCustomerHandler } from './enableCustomerHandler'
