@@ -13,7 +13,4 @@ export const disableCustomer = async (customerPhoneNumber: String): Promise<bool
 
 export const enableCustomer = async (customerPhoneNumber: String): Promise<boolean> => await enableCustomerHandler(customerPhoneNumber)
 
-export const getCustomer = async (customerPhoneNumber: String): Promise<CustomerInterface | null> => {
-  const returnData = await getCustomerHandler(customerPhoneNumber)
-  return returnData as CustomerInterface
-}
+export const getCustomer = async (customerPhoneNumber: String): Promise<CustomerInterface | null> => await getCustomerHandler(customerPhoneNumber)
