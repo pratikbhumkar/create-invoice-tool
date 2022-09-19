@@ -1,9 +1,9 @@
 import { CustomerInterface } from '../../dataInterface/customerInterface'
-import { addCustomerHandler } from './addCustomerHandler'
-import { disableCustomerHandler } from './disableCustomerHandler'
-import { enableCustomerHandler } from './enableCustomerHandler'
-import { getCustomerHandler } from './getCustomerHandler'
-import { updateCustomerHandler } from './updateCustomerHandler'
+import { addCustomerHandler } from '../../services/customerServices/addCustomerHandler'
+import { disableCustomerHandler } from '../../services/customerServices/disableCustomerHandler'
+import { enableCustomerHandler } from '../../services/customerServices/enableCustomerHandler'
+import { getCustomerHandler } from '../../services/customerServices/getCustomerHandler'
+import { updateCustomerHandler } from '../../services/customerServices/updateCustomerHandler'
 
 export const addCustomer = async (customer: CustomerInterface): Promise<CustomerInterface> => await addCustomerHandler(customer)
 

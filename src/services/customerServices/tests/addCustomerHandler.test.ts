@@ -1,5 +1,5 @@
 import { CustomerModel } from '../../../data/models/customerModel'
-import { addCustomerHandler } from '../addCustomerHandler'
+import { addCustomerHandler } from '../../../services/customerServices/addCustomerHandler'
 
 describe('addCustomerHandler', () => {
   test('should add customer', async () => {

@@ -1,10 +1,10 @@
 import { addCustomer, disableCustomer, enableCustomer, getCustomer, updateCustomer } from '..'
 import { CustomerInterface } from '../../../dataInterface/customerInterface'
-import * as addCustomerHandlers from '../addCustomerHandler'
-import * as updateCustomerHandlers from '../updateCustomerHandler'
-import * as enableCustomerHandlers from '../enableCustomerHandler'
-import * as disableCustomerHandlers from '../disableCustomerHandler'
-import * as getCustomerHandlers from '../getCustomerHandler'
+import * as addCustomerHandlers from '../../../services/customerServices/addCustomerHandler'
+import * as updateCustomerHandlers from '../../../services/customerServices/updateCustomerHandler'
+import * as enableCustomerHandlers from '../../../services/customerServices/enableCustomerHandler'
+import * as disableCustomerHandlers from '../../../services/customerServices/disableCustomerHandler'
+import * as getCustomerHandlers from '../../../services/customerServices/getCustomerHandler'
 
 describe('customer controller tests', () => {
   const customer: CustomerInterface = {
