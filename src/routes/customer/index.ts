@@ -5,7 +5,7 @@ import { addCustomer, disableCustomer, enableCustomer, getCustomer, updateCustom
 
 const customerRouter: Router = router.Router()
 
-customerRouter.put('/addCustomer', checkJwt, async function (req: Request<{}, {}, CustomerInterface>, res: Response, next) {
+customerRouter.post('/addCustomer', checkJwt, async function (req: Request<{}, {}, CustomerInterface>, res: Response, next) {
   const response = await addCustomer(req.body)
   res.send(response)
 })
