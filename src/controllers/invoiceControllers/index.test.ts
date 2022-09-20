@@ -1,5 +1,5 @@
 import { createInvoice, disableInvoice, enableInvoice, getInvoice, updateInvoice } from '../invoiceControllers'
-import { InvoiceInterface } from '../../dataInterface/invoiceInterface'
+import { InvoiceInterface } from '../../interfaces/invoiceInterface'
 import * as createInvoiceHandlers from '../../services/invoiceServices/createInvoiceHandler'
 import * as updateInvoiceHandlers from '../../services/invoiceServices/updateInvoiceHandler'
 import * as enableInvoiceHandlers from '../../services/invoiceServices/enableInvoiceHandler'

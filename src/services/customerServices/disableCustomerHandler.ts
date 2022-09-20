@@ -1,6 +1,6 @@
 import { CustomerModel } from '../../data/models/customerModel'
-import { CustomerInterface } from '../../dataInterface/customerInterface'
-import { CustomerStatusInterface } from '../../dataInterface/customerStatusInterface'
+import { CustomerInterface } from '../../interfaces/customerInterface'
+import { CustomerStatusInterface } from '../../interfaces/customerStatusInterface'
 
 export const disableCustomerHandler = async (customerPhoneNumber: String): Promise<boolean> => {
   const filter = { phone_number: customerPhoneNumber }

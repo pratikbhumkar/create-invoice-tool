@@ -1,4 +1,4 @@
-import { InvoiceInterface } from '../../../dataInterface/invoiceInterface'
+import { InvoiceInterface } from '../../../interfaces/invoiceInterface'
 import { InvoiceModel } from '../invoiceModel'
 
 describe('testing mongoose models', () => {

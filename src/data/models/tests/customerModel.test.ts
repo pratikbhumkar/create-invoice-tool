@@ -1,4 +1,4 @@
-import { CustomerInterface } from '../../../dataInterface/customerInterface'
+import { CustomerInterface } from '../../../interfaces/customerInterface'
 import { CustomerModel } from '../customerModel'
 
 describe('testing mongoose models', () => {

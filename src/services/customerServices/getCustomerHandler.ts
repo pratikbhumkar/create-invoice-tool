@@ -1,6 +1,6 @@
 import { CustomerModel } from '../../data/models/customerModel'
-import { CustomerInterface } from '../../dataInterface/customerInterface'
-import { CustomerSearchInterface } from '../../dataInterface/customerSearchInterface'
+import { CustomerInterface } from '../../interfaces/customerInterface'
+import { CustomerSearchInterface } from '../../interfaces/customerSearchInterface'
 
 export const getCustomerHandler = async (phoneNumber: String): Promise<CustomerInterface | null> => {
   const filter: CustomerSearchInterface = { phone_number: phoneNumber }
