@@ -1,5 +1,5 @@
 import { CustomerModel } from '../../../data/models/customerModel'
-import { enableCustomerHandler } from '../enableCustomerHandler'
+import { disableCustomerHandler } from '../disableCustomerHandler'
 
 describe('disableCustomerHandler', () => {
   const customer: any = {
@@ -14,10 +14,10 @@ describe('disableCustomerHandler', () => {
   }
   test('should get customer', async () => {
     CustomerModel.findOneAndUpdate = jest.fn().mockResolvedValue(customer)
-    void expect(enableCustomerHandler('1234')).resolves.toEqual(true)
+    void expect(disableCustomerHandler('1234')).resolves.toEqual(true)
   })
   test('should get customer', async () => {
     CustomerModel.findOneAndUpdate = jest.fn().mockResolvedValue(null)
-    void expect(enableCustomerHandler('1234')).resolves.toEqual(false)
+    void expect(disableCustomerHandler('1234')).resolves.toEqual(false)
   })
 })
