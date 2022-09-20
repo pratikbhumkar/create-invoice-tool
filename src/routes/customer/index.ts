@@ -1,6 +1,6 @@
 import router, { Router, Request, Response } from 'express'
 import { checkJwt } from '../../utils/jwtTokenChecker'
-import { ICustomer } from '../../interfaces/customerInterface'
+import { ICustomer } from '../../interfaces/CustomerInterface'
 import { addCustomer, disableCustomer, enableCustomer, getCustomer, updateCustomer } from '../../controllers/customerControllers'
 
 const customerRouter: Router = router.Router()

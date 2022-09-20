@@ -1,6 +1,6 @@
 import router, { Request, Response, Router } from 'express'
 import { createInvoice, disableInvoice, getInvoice, invoiceList, updateInvoice } from '../../controllers/invoiceControllers'
-import { IInvoice } from '../../interfaces/invoiceInterface'
+import { IInvoice } from '../../interfaces/InvoiceInterface'
 import { checkJwt } from '../../utils/jwtTokenChecker'
 const invoiceRouter: Router = router.Router()
 
