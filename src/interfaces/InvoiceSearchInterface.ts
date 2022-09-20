@@ -1,3 +1,3 @@
-export interface InvoiceSearchInterface {
+export interface IInvoiceSearch {
   invoiceNumber: String
 }

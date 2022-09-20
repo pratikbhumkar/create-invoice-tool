@@ -1,9 +1,9 @@
 import { InvoiceModel } from '../../data/models/invoiceModel'
-import { InvoiceInterface } from '../../interfaces/invoiceInterface'
-import { InvoiceStatusInterface } from '../../interfaces/invoiceStatusInterface'
+import { IInvoice } from '../../interfaces/InvoiceInterface'
+import { IInvoiceStatus } from '../../interfaces/InvoiceStatusInterface'
 
 export const enableInvoiceHandler = async (invoicePhoneNumber: String): Promise<boolean> => {
   const filter = { phone_number: invoicePhoneNumber }
-  const update: InvoiceStatusInterface = { disabled: false }
-  return await InvoiceModel.findOneAndUpdate(filter, update, { new: true }) as InvoiceInterface !== null
+  const update: IInvoiceStatus = { disabled: false }
+  return await InvoiceModel.findOneAndUpdate(filter, update, { new: true }) as IInvoice !== null
 }

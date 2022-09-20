@@ -1,9 +1,9 @@
 import { CustomerModel } from '../../data/models/customerModel'
-import { CustomerInterface } from '../../interfaces/customerInterface'
-import { CustomerSearchInterface } from '../../interfaces/customerSearchInterface'
+import { ICustomer } from '../../interfaces/CustomerInterface'
+import { ICustomerSearch } from '../../interfaces/CustomerSearchInterface'
 
-export const getCustomerHandler = async (phoneNumber: String): Promise<CustomerInterface | null> => {
-  const filter: CustomerSearchInterface = { phone_number: phoneNumber }
+export const getCustomerHandler = async (phoneNumber: String): Promise<ICustomer | null> => {
+  const filter: ICustomerSearch = { phone_number: phoneNumber }
   const cust = await CustomerModel.findOne(filter)
-  return cust as CustomerInterface
+  return cust as ICustomer
 }

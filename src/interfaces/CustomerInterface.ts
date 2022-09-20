@@ -1,4 +1,4 @@
-export interface CustomerInterface {
+export interface ICustomer {
   name: String
   address: String
   phone_number: String

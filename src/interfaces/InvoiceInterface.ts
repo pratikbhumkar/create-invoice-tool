@@ -1,9 +1,9 @@
-import { BilledItem } from './billedItemInterface'
+import { IBilledItem } from './BilledItemInterface'
 
-export interface InvoiceInterface {
+export interface IInvoice {
   invoiceNumber: String
   customerName: String
-  billeditems: BilledItem[]
+  billeditems: IBilledItem[]
   price: Number
   description: String
   dateOfIssue: Date

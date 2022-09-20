@@ -1,3 +1,3 @@
-export interface CustomerSearchInterface {
+export interface ICustomerSearch {
   phone_number: String
 }

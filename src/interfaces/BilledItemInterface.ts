@@ -1,4 +1,4 @@
-export interface BilledItem {
+export interface IBilledItem {
   item: String
   rate: Number
 }

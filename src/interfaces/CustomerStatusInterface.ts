@@ -1,3 +1,3 @@
-export interface CustomerStatusInterface {
+export interface ICustomerStatus {
   disabled: Boolean
 }

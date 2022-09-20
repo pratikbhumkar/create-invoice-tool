@@ -1,5 +1,5 @@
 import { createInvoice, disableInvoice, enableInvoice, getInvoice, updateInvoice } from '../invoiceControllers'
-import { InvoiceInterface } from '../../interfaces/invoiceInterface'
+import { IInvoice } from '../../interfaces/InvoiceInterface'
 import * as createInvoiceHandlers from '../../services/invoiceServices/createInvoiceHandler'
 import * as updateInvoiceHandlers from '../../services/invoiceServices/updateInvoiceHandler'
 import * as enableInvoiceHandlers from '../../services/invoiceServices/enableInvoiceHandler'
@@ -7,7 +7,7 @@ import * as disableInvoiceHandlers from '../../services/invoiceServices/disableI
 import * as getInvoiceHandlers from '../../services/invoiceServices/getInvoiceHandler'
 
 describe('invoice controller tests', () => {
-  const invoice: InvoiceInterface = {
+  const invoice: IInvoice = {
     invoiceNumber: 'String',
     customerName: 'String',
     billeditems: [{ item: 'pre-work', rate: 50 }],

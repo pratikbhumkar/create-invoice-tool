@@ -1,5 +1,5 @@
 import { addCustomer, disableCustomer, enableCustomer, getCustomer, updateCustomer } from '..'
-import { CustomerInterface } from '../../../interfaces/customerInterface'
+import { ICustomer } from '../../../interfaces/CustomerInterface'
 import * as addCustomerHandlers from '../../../services/customerServices/addCustomerHandler'
 import * as updateCustomerHandlers from '../../../services/customerServices/updateCustomerHandler'
 import * as enableCustomerHandlers from '../../../services/customerServices/enableCustomerHandler'
@@ -7,7 +7,7 @@ import * as disableCustomerHandlers from '../../../services/customerServices/dis
 import * as getCustomerHandlers from '../../../services/customerServices/getCustomerHandler'
 
 describe('customer controller tests', () => {
-  const customer: CustomerInterface = {
+  const customer: ICustomer = {
     abn: 1233,
     name: 'undefined',
     address: 'undefined',

@@ -1,9 +1,9 @@
 import { CustomerModel } from '../../data/models/customerModel'
-import { CustomerInterface } from '../../interfaces/customerInterface'
-import { CustomerStatusInterface } from '../../interfaces/customerStatusInterface'
+import { ICustomer } from '../../interfaces/CustomerInterface'
+import { ICustomerStatus } from '../../interfaces/CustomerStatusInterface'
 
 export const enableCustomerHandler = async (customerPhoneNumber: String): Promise<boolean> => {
   const filter = { phone_number: customerPhoneNumber }
-  const update: CustomerStatusInterface = { disabled: false }
-  return await CustomerModel.findOneAndUpdate(filter, update, { new: true }) as CustomerInterface !== null
+  const update: ICustomerStatus = { disabled: false }
+  return await CustomerModel.findOneAndUpdate(filter, update, { new: true }) as ICustomer !== null
 }

@@ -1,7 +1,7 @@
 import { CustomerModel } from '../../data/models/customerModel'
-import { CustomerInterface } from '../../interfaces/customerInterface'
+import { ICustomer } from '../../interfaces/CustomerInterface'
 
-export const addCustomerHandler = async (customer: CustomerInterface): Promise<CustomerInterface> => {
+export const addCustomerHandler = async (customer: ICustomer): Promise<ICustomer> => {
   const customerInstance = new CustomerModel(customer)
-  return await customerInstance.save() as CustomerInterface
+  return await customerInstance.save() as ICustomer
 }

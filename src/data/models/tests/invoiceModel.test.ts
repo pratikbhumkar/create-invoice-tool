@@ -1,9 +1,9 @@
-import { InvoiceInterface } from '../../../interfaces/invoiceInterface'
+import { IInvoice } from '../../../interfaces/InvoiceInterface'
 import { InvoiceModel } from '../invoiceModel'
 
 describe('testing mongoose models', () => {
   test('should create a mongoose model for invoice', () => {
-    const invoice: InvoiceInterface = {
+    const invoice: IInvoice = {
       invoiceNumber: '1234',
       customerName: 'customerName',
       billeditems: [{ item: 'item', rate: 100 }],

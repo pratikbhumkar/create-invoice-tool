@@ -1,9 +1,9 @@
-import { CustomerInterface } from '../../../interfaces/customerInterface'
+import { ICustomer } from '../../../interfaces/CustomerInterface'
 import { CustomerModel } from '../customerModel'
 
 describe('testing mongoose models', () => {
   test('should create a mongoose model for customer', () => {
-    const customer: CustomerInterface = {
+    const customer: ICustomer = {
       name: 'test',
       address: 'address',
       phone_number: 'phone_number',

@@ -1,10 +1,10 @@
 import router, { Request, Response, Router } from 'express'
 import { createInvoice, disableInvoice, getInvoice, invoiceList, updateInvoice } from '../../controllers/invoiceControllers'
-import { InvoiceInterface } from '../../interfaces/invoiceInterface'
+import { IInvoice } from '../../interfaces/invoiceInterface'
 import { checkJwt } from '../../utils/jwtTokenChecker'
 const invoiceRouter: Router = router.Router()
 
-invoiceRouter.post('/createInvoice', checkJwt, async function (req: Request<{}, {}, InvoiceInterface>, res: Response, next) {
+invoiceRouter.post('/createInvoice', checkJwt, async function (req: Request<{}, {}, IInvoice>, res: Response, next) {
   const invoice = await createInvoice(req.body)
   res.send(invoice)
 })
@@ -19,7 +19,7 @@ invoiceRouter.post('/disableInvoice', checkJwt, async function (req: Request<{},
   res.send(invoice)
 })
 
-invoiceRouter.post('/updateInvoice', checkJwt, async function (req: Request<{}, {}, InvoiceInterface>, res: Response, next) {
+invoiceRouter.post('/updateInvoice', checkJwt, async function (req: Request<{}, {}, IInvoice>, res: Response, next) {
   const invoice = await updateInvoice(req.body)
   ;(invoice != null) ? res.send(invoice) : res.status(404).send(`Invoice not found for Invoice number:${req.query.invoiceNumber}`)
 })

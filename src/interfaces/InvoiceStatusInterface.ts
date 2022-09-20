@@ -1,4 +1,4 @@
 
-export interface InvoiceStatusInterface {
+export interface IInvoiceStatus {
   disabled: Boolean
 }
