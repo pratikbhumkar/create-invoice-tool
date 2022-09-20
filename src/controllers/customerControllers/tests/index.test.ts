@@ -1,10 +1,11 @@
-import { addCustomer, disableCustomer, enableCustomer, getCustomer, updateCustomer } from '..'
+import { addCustomer, disableCustomer, enableCustomer, getAllCustomers, getCustomer, updateCustomer } from '..'
 import { ICustomer } from '../../../interfaces/CustomerInterface'
 import * as addCustomerHandlers from '../../../services/customerServices/addCustomerHandler'
 import * as updateCustomerHandlers from '../../../services/customerServices/updateCustomerHandler'
 import * as enableCustomerHandlers from '../../../services/customerServices/enableCustomerHandler'
 import * as disableCustomerHandlers from '../../../services/customerServices/disableCustomerHandler'
 import * as getCustomerHandlers from '../../../services/customerServices/getCustomerHandler'
+import * as getAllCustomersHandlers from '../../../services/customerServices/getAllCustomersHandler'
 
 describe('customer controller tests', () => {
   const customer: ICustomer = {
@@ -52,5 +53,11 @@ describe('customer controller tests', () => {
       .mockReturnValue(Promise.resolve(false))
     await disableCustomer('1234')
     expect(disableCustomerHandlerSpy).toHaveBeenCalled()
+  })
+  test('should call appropriate handler for get all customers', async () => {
+    const getAllCustomersHandlerSpy = jest.spyOn(getAllCustomersHandlers, 'getAllCustomersHandler')
+      .mockReturnValue(Promise.resolve([customer]))
+    await getAllCustomers()
+    expect(getAllCustomersHandlerSpy).toHaveBeenCalled()
   })
 })
