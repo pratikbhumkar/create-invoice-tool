@@ -4,7 +4,7 @@ import { disableInvoiceHandler } from '../../services/invoiceServices/disableInv
 import { enableInvoiceHandler } from '../../services/invoiceServices/enableInvoiceHandler'
 import { getInvoiceHandler } from '../../services/invoiceServices/getInvoiceHandler'
 import { updateInvoiceHandler } from '../../services/invoiceServices/updateInvoiceHandler'
-import { listInvoiceHandler } from '../../services/invoiceServices/listinvoiceHandler'
+import { listInvoiceHandler } from '../../services/invoiceServices/listInvoiceHandler'
 
 export const createInvoice = async (invoice: InvoiceInterface): Promise<InvoiceInterface> => await createInvoiceHandler(invoice)
 
@@ -16,4 +16,4 @@ export const enableInvoice = async (invoiceNumber: String): Promise<boolean> => 
 
 export const getInvoice = async (invoiceNumber: String): Promise<InvoiceInterface | null> => await getInvoiceHandler(invoiceNumber)
 
-export const invoiceList = async (invoiceNumber: String): Promise<InvoiceInterface[] | null> => await listInvoiceHandler()
+export const invoiceList = async (): Promise<InvoiceInterface[] | null> => await listInvoiceHandler()
