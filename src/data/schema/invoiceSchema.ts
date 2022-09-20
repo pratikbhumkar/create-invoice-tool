@@ -8,5 +8,5 @@ export const invoiceSchema = new mongoose.Schema({
   price: { type: Number, required: true },
   description: String,
   dateOfIssue: { type: Date, default: Date.now },
-  disabled: { type: Boolean, required: true }
+  disabled: { type: Boolean, default: false, required: true }
 })
