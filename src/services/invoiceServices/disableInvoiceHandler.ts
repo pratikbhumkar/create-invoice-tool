@@ -1,6 +1,6 @@
 import { InvoiceModel } from '../../data/models/invoiceModel'
-import { InvoiceInterface } from '../../dataInterface/InvoiceInterface'
-import { InvoiceStatusInterface } from '../../dataInterface/InvoiceStatusInterface'
+import { InvoiceInterface } from '../../dataInterface/invoiceInterface'
+import { InvoiceStatusInterface } from '../../dataInterface/invoiceStatusInterface'
 
 export const disableInvoiceHandler = async (invoicePhoneNumber: String): Promise<boolean> => {
   const filter = { phone_number: invoicePhoneNumber }

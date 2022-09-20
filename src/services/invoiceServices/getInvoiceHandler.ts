@@ -1,6 +1,6 @@
 import { InvoiceModel } from '../../data/models/invoiceModel'
-import { InvoiceInterface } from '../../dataInterface/InvoiceInterface'
-import { InvoiceSearchInterface } from '../../dataInterface/InvoiceSearchInterface'
+import { InvoiceInterface } from '../../dataInterface/invoiceInterface'
+import { InvoiceSearchInterface } from '../../dataInterface/invoiceSearchInterface'
 
 export const getInvoiceHandler = async (invoiceNumber: String): Promise<InvoiceInterface | null> => {
   const filter: InvoiceSearchInterface = { invoiceNumber }

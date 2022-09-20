@@ -1,5 +1,5 @@
 import { InvoiceModel } from '../../data/models/invoiceModel'
-import { InvoiceInterface } from '../../dataInterface/InvoiceInterface'
+import { InvoiceInterface } from '../../dataInterface/invoiceInterface'
 
 export const createInvoiceHandler = async (invoice: InvoiceInterface): Promise<InvoiceInterface> => {
   const invoiceInstance = new InvoiceModel(invoice)
