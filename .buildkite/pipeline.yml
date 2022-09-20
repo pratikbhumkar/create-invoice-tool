@@ -22,9 +22,11 @@ steps:
   - wait
   - name: "Set Heroku config/environment variables"
     commands: 
-    - "heroku config:set ISSUER_BASE_URL={{$ISSUER_BASE_URL}} -a thawing-bayou-98812"
+    - "heroku config:set ISSUER_BASE_URL=$ISSUER_BASE_URL -a thawing-bayou-98812"
     # - "heroku config:set PORT={{$PORT}} -a thawing-bayou-98812"
-    - "heroku config:set API_IDENTIFIER={{$API_IDENTIFIER}} -a thawing-bayou-98812"
+    - "heroku config:set API_IDENTIFIER=$API_IDENTIFIER -a thawing-bayou-98812"
+    - "heroku config:set MONGO_USERNAME=$MONGO_USERNAME -a thawing-bayou-98812"
+    - "heroku config:set MONGO_PASSWORD=$MONGO_PASSWORD -a thawing-bayou-98812"
   - wait
   - name: ":surfer: release app from heroku"
     command: "heroku container:release web -a thawing-bayou-98812"
