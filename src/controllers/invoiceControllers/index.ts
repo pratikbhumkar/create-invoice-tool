@@ -1,4 +1,4 @@
-import { InvoiceInterface } from '../../dataInterface/invoiceInterface'
+import { InvoiceInterface } from '../../dataInterface/InvoiceInterface'
 import { createInvoiceHandler } from '../../services/invoiceServices/createInvoiceHandler'
 import { disableInvoiceHandler } from '../../services/invoiceServices/disableInvoiceHandler'
 import { enableInvoiceHandler } from '../../services/invoiceServices/enableInvoiceHandler'

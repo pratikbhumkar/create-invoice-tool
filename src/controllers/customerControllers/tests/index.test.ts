@@ -1,5 +1,5 @@
 import { addCustomer, disableCustomer, enableCustomer, getCustomer, updateCustomer } from '..'
-import { CustomerInterface } from '../../../dataInterface/customerInterface'
+import { CustomerInterface } from '../../../dataInterface/CustomerInterface'
 import * as addCustomerHandlers from '../../../services/customerServices/addCustomerHandler'
 import * as updateCustomerHandlers from '../../../services/customerServices/updateCustomerHandler'
 import * as enableCustomerHandlers from '../../../services/customerServices/enableCustomerHandler'

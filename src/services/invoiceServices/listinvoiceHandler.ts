@@ -1,5 +1,5 @@
 import { InvoiceModel } from '../../data/models/invoiceModel'
-import { InvoiceInterface } from '../../dataInterface/invoiceInterface'
+import { InvoiceInterface } from '../../dataInterface/InvoiceInterface'
 
 export const listInvoiceHandler = async (): Promise<InvoiceInterface[]> => {
   const invoiceList: InvoiceInterface[] = await InvoiceModel.find({}, function (_err: any, invoices: InvoiceInterface[]) {
