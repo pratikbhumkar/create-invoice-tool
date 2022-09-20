@@ -3,10 +3,10 @@ steps:
     command: "docker build -f Dockerfile.dev . -t pratikbhumkar/create-invoice-tool-dev"
   - wait
   - name: ":lint-roller: Checking for lints"
-    command: "docker run docker.io/pratikbhumkar/create-invoice-tool-dev npm run lint"
+    command: "docker run pratikbhumkar/create-invoice-tool-dev npm run lint"
   - wait
   - name: ":lint-roller: Testing code"
-    command: "docker run docker.io/pratikbhumkar/create-invoice-tool-dev npm test"
+    command: "docker run pratikbhumkar/create-invoice-tool-dev npm test"
   - block: ":rocket: Run local build!"
   - name: ":classical_building: Building local image"
     command: "docker build -f Dockerfile . -t pratikbhumkar/create-invoice-tool"
@@ -22,9 +22,11 @@ steps:
   - wait
   - name: "Set Heroku config/environment variables"
     commands: 
-    - "heroku config:set ISSUER_BASE_URL={{$ISSUER_BASE_URL}} -a thawing-bayou-98812"
+    - "heroku config:set ISSUER_BASE_URL=$ISSUER_BASE_URL -a thawing-bayou-98812"
     # - "heroku config:set PORT={{$PORT}} -a thawing-bayou-98812"
-    - "heroku config:set API_IDENTIFIER={{$API_IDENTIFIER}} -a thawing-bayou-98812"
+    - "heroku config:set API_IDENTIFIER=$API_IDENTIFIER -a thawing-bayou-98812"
+    - "heroku config:set MONGO_USERNAME=$MONGO_USERNAME -a thawing-bayou-98812"
+    - "heroku config:set MONGO_PASSWORD=$MONGO_PASSWORD -a thawing-bayou-98812"
   - wait
   - name: ":surfer: release app from heroku"
     command: "heroku container:release web -a thawing-bayou-98812"

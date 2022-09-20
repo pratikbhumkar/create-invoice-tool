@@ -3,7 +3,7 @@ import { checkJwt } from '../../utils/jwtTokenChecker'
 const loginRouter: Router = router.Router()
 
 loginRouter.get('/', checkJwt, function (req, res, next) {
-  res.send('Welcome')
+  res.send('Welcome to dashboard')
 })
 
 export default loginRouter
