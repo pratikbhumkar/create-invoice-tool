@@ -2,6 +2,7 @@ import { ICustomer } from '../../interfaces/CustomerInterface'
 import { addCustomerHandler } from '../../services/customerServices/addCustomerHandler'
 import { disableCustomerHandler } from '../../services/customerServices/disableCustomerHandler'
 import { enableCustomerHandler } from '../../services/customerServices/enableCustomerHandler'
+import { getAllCustomersHandler } from '../../services/customerServices/getAllCustomersHandler'
 import { getCustomerHandler } from '../../services/customerServices/getCustomerHandler'
 import { updateCustomerHandler } from '../../services/customerServices/updateCustomerHandler'
 
@@ -14,3 +15,5 @@ export const disableCustomer = async (customerPhoneNumber: String): Promise<bool
 export const enableCustomer = async (customerPhoneNumber: String): Promise<boolean> => await enableCustomerHandler(customerPhoneNumber)
 
 export const getCustomer = async (customerPhoneNumber: String): Promise<ICustomer | null> => await getCustomerHandler(customerPhoneNumber)
+
+export const getAllCustomers = async (): Promise<ICustomer[]> => await getAllCustomersHandler()

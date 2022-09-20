@@ -1,7 +1,7 @@
 import router, { Router, Request, Response } from 'express'
 import { checkJwt } from '../../utils/jwtTokenChecker'
 import { ICustomer } from '../../interfaces/CustomerInterface'
-import { addCustomer, disableCustomer, enableCustomer, getCustomer, updateCustomer } from '../../controllers/customerControllers'
+import { addCustomer, disableCustomer, enableCustomer, getAllCustomers, getCustomer, updateCustomer } from '../../controllers/customerControllers'
 
 const customerRouter: Router = router.Router()
 
@@ -28,6 +28,11 @@ customerRouter.get('/enableCustomer', checkJwt, async function (req: Request<{},
 customerRouter.post('/updateCustomer', checkJwt, async function (req: Request<{}, {}, ICustomer>, res: Response, next) {
   const customer = await updateCustomer(req.body)
   ;(customer != null) ? res.send(customer) : res.status(404).send('Customer not found')
+})
+
+customerRouter.get('/getAllCustomers', checkJwt, async function (req: Request<{}, {}, {}>, res: Response, next) {
+  const response = await getAllCustomers()
+  res.send(response)
 })
 
 export default customerRouter

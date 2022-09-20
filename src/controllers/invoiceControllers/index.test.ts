@@ -1,10 +1,11 @@
-import { createInvoice, disableInvoice, enableInvoice, getInvoice, updateInvoice } from '../invoiceControllers'
+import { createInvoice, disableInvoice, enableInvoice, getInvoice, invoiceList, updateInvoice } from '../invoiceControllers'
 import { IInvoice } from '../../interfaces/InvoiceInterface'
 import * as createInvoiceHandlers from '../../services/invoiceServices/createInvoiceHandler'
 import * as updateInvoiceHandlers from '../../services/invoiceServices/updateInvoiceHandler'
 import * as enableInvoiceHandlers from '../../services/invoiceServices/enableInvoiceHandler'
 import * as disableInvoiceHandlers from '../../services/invoiceServices/disableInvoiceHandler'
 import * as getInvoiceHandlers from '../../services/invoiceServices/getInvoiceHandler'
+import * as listInvoiceHandlers from '../../services/invoiceServices/listinvoiceHandler'
 
 describe('invoice controller tests', () => {
   const invoice: IInvoice = {
@@ -51,5 +52,11 @@ describe('invoice controller tests', () => {
       .mockReturnValue(Promise.resolve(false))
     await disableInvoice('1234')
     expect(disableInvoiceHandlerSpy).toHaveBeenCalled()
+  })
+  test('should call appropriate handler for get all invoices', async () => {
+    const listInvoiceHandlerSpy = jest.spyOn(listInvoiceHandlers, 'listInvoiceHandler')
+      .mockReturnValue(Promise.resolve([invoice]))
+    await invoiceList()
+    expect(listInvoiceHandlerSpy).toHaveBeenCalled()
   })
 })
