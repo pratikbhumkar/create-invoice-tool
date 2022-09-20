@@ -1,7 +1,9 @@
+import { BilledItem } from './billedItemInterface'
+
 export interface InvoiceInterface {
-  invoiceNumber: Number
+  invoiceNumber: String
   customerName: String
-  billeditems: [{ item: String, rate: Number }]
+  billeditems: BilledItem[]
   price: Number
   description: String
   dateOfIssue: Date
