@@ -6,6 +6,6 @@ export const listInvoiceHandler = async (): Promise<InvoiceInterface[]> => {
     invoices.forEach(function (invoice: InvoiceInterface) {
       invoiceList.push(invoice)
     })
-  })
+  }).clone() as InvoiceInterface[]
   return invoiceList
 }

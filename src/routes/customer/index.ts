@@ -12,7 +12,7 @@ customerRouter.post('/addCustomer', checkJwt, async function (req: Request<{}, {
 
 customerRouter.get('/getCustomer', checkJwt, async function (req: Request<{}, {}, String>, res: Response, next) {
   const customer = await getCustomer(req.query.customerPhoneNumber as string)
-  res.send(customer)
+  ;(customer != null) ? res.send(customer) : res.status(404).send(`Customer not found for Phone number:${req.query.customerPhoneNumber}`)
 })
 
 customerRouter.get('/disableCustomer', checkJwt, async function (req: Request<{}, {}, String>, res: Response, next) {
@@ -26,8 +26,8 @@ customerRouter.get('/enableCustomer', checkJwt, async function (req: Request<{},
 })
 
 customerRouter.post('/updateCustomer', checkJwt, async function (req: Request<{}, {}, CustomerInterface>, res: Response, next) {
-  const response = await updateCustomer(req.body)
-  res.send(response)
+  const customer = await updateCustomer(req.body)
+  ;(customer != null) ? res.send(customer) : res.status(404).send('Customer not found')
 })
 
 export default customerRouter
