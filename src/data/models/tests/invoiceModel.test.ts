@@ -4,7 +4,7 @@ import { InvoiceModel } from '../invoiceModel'
 describe('testing mongoose models', () => {
   test('should create a mongoose model for invoice', () => {
     const invoice: InvoiceInterface = {
-      invoiceNumber: 1234,
+      invoiceNumber: '1234',
       customerName: 'customerName',
       billeditems: [{ item: 'item', rate: 100 }],
       price: 100,
@@ -36,7 +36,7 @@ describe('testing mongoose models', () => {
   })
   test('should throw an error for missing customer name', () => {
     const invoice = {
-      invoiceNumber: 1234,
+      invoiceNumber: '1234',
       billeditems: [{ item: 'item', rate: 100 }],
       price: 100,
       description: 'description',
@@ -48,7 +48,7 @@ describe('testing mongoose models', () => {
   })
   test('should throw an error for missing billedItems', () => {
     const invoice = {
-      invoiceNumber: 1234,
+      invoiceNumber: '1234',
       customerName: 'customerName',
       price: 100,
       description: 'description',
@@ -60,7 +60,7 @@ describe('testing mongoose models', () => {
   })
   test('should throw an error for missing price', () => {
     const invoice = {
-      invoiceNumber: 1234,
+      invoiceNumber: '1234',
       customerName: 'customerName',
       billeditems: [{ item: 'item', rate: 100 }],
       description: 'description',
@@ -72,7 +72,7 @@ describe('testing mongoose models', () => {
   })
   test('should throw an error for missing dateOfIssue', () => {
     const invoice = {
-      invoiceNumber: 1234,
+      invoiceNumber: '1234',
       customerName: 'customerName',
       billeditems: [{ item: 'item', rate: 100 }],
       price: 100,
@@ -84,7 +84,7 @@ describe('testing mongoose models', () => {
   })
   test('should throw an error for missing disabled', () => {
     const invoice = {
-      invoiceNumber: 1234,
+      invoiceNumber: '1234',
       customerName: 'customerName',
       billeditems: [{ item: 'item', rate: 100 }],
       price: 100,
