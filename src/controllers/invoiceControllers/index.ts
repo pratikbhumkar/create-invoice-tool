@@ -16,4 +16,4 @@ export const enableInvoice = async (invoiceNumber: String): Promise<boolean> => 
 
 export const getInvoice = async (invoiceNumber: String): Promise<InvoiceInterface | null> => await getInvoiceHandler(invoiceNumber)
 
-export const invoiceList = async (): Promise<InvoiceInterface[] | null> => await listInvoiceHandler()
+export const invoiceList = async (): Promise<InvoiceInterface[]> => await listInvoiceHandler()
