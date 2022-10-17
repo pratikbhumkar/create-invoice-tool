@@ -3,14 +3,18 @@ import { expressJwtSecret, GetVerificationKey } from 'jwks-rsa'
 import * as dotenv from 'dotenv'
 
 dotenv.config({ path: '.env' })
+const domain = process.env.AUTH0_DOMAIN ?? ''
+const audience = process.env.AUDIENCE ?? ''
+
 export const checkJwt = expressjwt({
   secret: expressJwtSecret({
     cache: true,
     rateLimit: true,
     jwksRequestsPerMinute: 5,
-    jwksUri: `${process.env.ISSUER_BASE_URL}/.well-known/jwks.json`
+    jwksUri: `https://${domain}/.well-known/jwks.json`
   }) as GetVerificationKey,
 
-  audience: process.env.API_IDENTIFIER,
+  audience,
+  issuer: `https://${domain}/`,
   algorithms: ['RS256']
 })
