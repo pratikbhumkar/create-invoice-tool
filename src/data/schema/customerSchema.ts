@@ -8,5 +8,6 @@ export const customerSchema = new mongoose.Schema({
   rate: { type: Number, required: true },
   subject: { type: String, required: true },
   email: { type: String, required: true },
-  abn: Number
+  abn: String,
+  acn: String
 })

@@ -5,5 +5,5 @@ const uri = `mongodb+srv://${process.env.MONGO_USERNAME}:${process.env.MONGO_PAS
 export const connection = async (): Promise<void> => {
   await mongoose.connect(uri)
 }
-
-connection().catch((err: string) => console.log('error connecting to mongo', err))
+const connectionDetails = connection().catch((err: string) => console.log('error connecting to mongo', err))
+void connectionDetails.then(() => console.log('Connected to DB'))

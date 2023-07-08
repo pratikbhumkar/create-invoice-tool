@@ -11,7 +11,7 @@ describe('testing mongoose models', () => {
       rate: 100,
       subject: 'node',
       email: 'node@node.com',
-      abn: 123345
+      abn: '123345'
     }
     const customerInstance = new CustomerModel(customer)
     expect(customerInstance.name).toEqual(customer.name)
@@ -32,7 +32,7 @@ describe('testing mongoose models', () => {
       rate: 100,
       subject: 'node',
       email: 'node@node.com',
-      abn: 123345
+      abn: '123345'
     }
     const customerInstance = new CustomerModel(customer)
     expect(customerInstance.validateSync).toThrowError()
@@ -45,7 +45,7 @@ describe('testing mongoose models', () => {
       rate: 100,
       subject: 'node',
       email: 'node@node.com',
-      abn: 123345
+      abn: '123345'
     }
     const customerInstance = new CustomerModel(customer)
     expect(customerInstance.validateSync).toThrowError()
@@ -58,7 +58,7 @@ describe('testing mongoose models', () => {
       rate: 100,
       subject: 'node',
       email: 'node@node.com',
-      abn: 123345
+      abn: '123345'
     }
     const customerInstance = new CustomerModel(customer)
     expect(customerInstance.validateSync).toThrowError()
@@ -70,7 +70,7 @@ describe('testing mongoose models', () => {
       phone_number: 'phone_number',
       subject: 'node',
       email: 'node@node.com',
-      abn: 123345,
+      abn: '123345',
       disabled: true
     }
     const customerInstance = new CustomerModel(customer)
@@ -82,7 +82,7 @@ describe('testing mongoose models', () => {
       address: 'address',
       phone_number: 'phone_number',
       email: 'node@node.com',
-      abn: 123345,
+      abn: '123345',
       disabled: true,
       rate: 100
     }
@@ -94,7 +94,7 @@ describe('testing mongoose models', () => {
       name: 'test',
       address: 'address',
       phone_number: 'phone_number',
-      abn: 123345,
+      abn: '123345',
       disabled: true,
       rate: 100,
       subject: 'sub'

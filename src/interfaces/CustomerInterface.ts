@@ -6,5 +6,6 @@ export interface ICustomer {
   rate: Number
   subject: String
   email: String
-  abn: Number
+  abn?: String
+  acn?: String
 }
